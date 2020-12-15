@@ -34,11 +34,11 @@ if [[ $CURRENT_PLATFORM = "Mac" ]]; then
 
     # prezto のプラグインやテーマを使用する
     zplug "modules/osx", from:prezto, if:"[[ $OSTYPE == *darwin* ]]"
+    zplug "modules/prompt", from:prezto
+    # zstyle は zplug load の前に設定する
+    zstyle ':prezto:module:prompt' theme 'sorin'
 fi
 
-zplug "modules/prompt", from:prezto
-# zstyle は zplug load の前に設定する
-zstyle ':prezto:module:prompt' theme 'sorin'
 
 # インストール・アップデート後に実行されるフック
 # この場合は以下のような設定が別途必要
