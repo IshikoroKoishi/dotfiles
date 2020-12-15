@@ -29,10 +29,13 @@ zplug "junegunn/fzf-bin", \
 zplug "plugins/git",   from:oh-my-zsh
 
 # if タグが true のときのみインストールされる
-zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+if [[ $CURRENT_PLATFORM = "Mac" ]]; then
+    zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 
-# prezto のプラグインやテーマを使用する
-zplug "modules/osx", from:prezto, if:"[[ $OSTYPE == *darwin* ]]"
+    # prezto のプラグインやテーマを使用する
+    zplug "modules/osx", from:prezto, if:"[[ $OSTYPE == *darwin* ]]"
+fi
+
 zplug "modules/prompt", from:prezto
 # zstyle は zplug load の前に設定する
 zstyle ':prezto:module:prompt' theme 'sorin'
