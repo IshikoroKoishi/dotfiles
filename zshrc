@@ -122,7 +122,7 @@ if [ "$TERM" != "linux" ]; then
 fi
 
 # anyenvがインストール済みの環境でのみ設定反映
-if [ "$(type anyenv)" ]; then
+if builtin command -v anyenv >/dev/null; then
   eval "$(anyenv init -)"
 fi
 
