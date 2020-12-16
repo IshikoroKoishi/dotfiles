@@ -21,5 +21,6 @@ call plug#end()
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'deus'
 set number
+set backspace=2
 
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
