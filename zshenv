@@ -13,11 +13,5 @@ fi
 if [ -z "$TERM_PROGRAM" ]; then
     export CURRENT_TERMINAL='other'
 else
-    if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
-        export CURRENT_TERMINAL='iTerm'
-    elif [ "$TERM_PROGRAM" = "vscode" ]; then
-        export CURRENT_TERMINAL='vscode'
-    else
-        export CURRENT_TERMINAL='other'
-    fi
+    export CURRENT_TERMINAL="$(echo $TERM_PROGRAM | sed 's/\./_/g')"
 fi
