@@ -99,7 +99,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
-# コマンドをリンクして、PATH に追加し、プラグインは読み込む
+# コマンドをリンクして、PATH に追加し、プラグインを読み込む
 zplug load
 
 
