@@ -16,7 +16,9 @@ else
     export CURRENT_TERMINAL="$(echo $TERM_PROGRAM | sed 's/\./_/g')"
 fi
 
-source "$HOME/.cargo/env"
+if [ -f "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+fi
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.anyenv/bin"
