@@ -130,8 +130,8 @@ fi
 if [[ ! -n $TMUX ]]; then
   ID="`tmux list-sessions`"
   if [[ -z "$(echo $ID | grep -s $CURRENT_TERMINAL)" ]]; then
-    tmux -2 new-session -s $CURRENT_TERMINAL && exit
+    tmux -2u new-session -s $CURRENT_TERMINAL && exit
   else
-    tmux -2 attach-session -s $CURRENT_TERMINAL && exit
+    tmux -2u attach-session -t $CURRENT_TERMINAL && exit
   fi
 fi
