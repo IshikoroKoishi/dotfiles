@@ -9,3 +9,15 @@ else
     echo "Your platform ($(uname -a)) is not supported."
     exit 1
 fi
+
+if [ -z "$TERM_PROGRAM" ]; then
+    export CURRENT_TERMINAL='other'
+else
+    if [ "$TERM_PROGRAM" = "iTerm.app" ]; then
+        export CURRENT_TERMINAL='iTerm'
+    elif [ "$TERM_PROGRAM" = "vscode" ]; then
+        export CURRENT_TERMINAL='vscode'
+    else
+        export CURRENT_TERMINAL='other'
+    fi
+fi

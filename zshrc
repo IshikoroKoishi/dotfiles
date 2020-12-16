@@ -124,10 +124,10 @@ fi
 # tmux自動起動
 if [[ ! -n $TMUX ]]; then
   ID="`tmux list-sessions`"
-  if [[ -z "$ID" ]]; then
-    tmux new-session && exit
+  if [[ -z "$(echo $ID | grep -s $CURRENT_TERMINAL)" ]]; then
+    tmux new-session -s $CURRENT_TERMINAL && exit
   else
-    tmux attach-session && exit
+    tmux attach-session -s $CURRENT_TERMINAL && exit
   fi
 fi
 
