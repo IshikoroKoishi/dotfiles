@@ -121,6 +121,11 @@ if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
 
+# anyenvがインストール済みの環境でのみ設定反映
+if [ "$(anyenv -v | grep 'anyenv')" ]; then
+  eval "$(anyenv init -)"
+fi
+
 # tmux自動起動
 if [[ ! -n $TMUX ]]; then
   ID="`tmux list-sessions`"

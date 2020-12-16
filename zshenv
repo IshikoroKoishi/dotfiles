@@ -15,3 +15,8 @@ if [ -z "$TERM_PROGRAM" ]; then
 else
     export CURRENT_TERMINAL="$(echo $TERM_PROGRAM | sed 's/\./_/g')"
 fi
+
+source "$HOME/.cargo/env"
+
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.anyenv/bin"
