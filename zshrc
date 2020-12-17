@@ -105,7 +105,8 @@ zplug load
 
 # Powerline-goを設定
 function powerline_precmd() {
-    PS1="$(powerline-go -error $? -shell zsh)"
+    # PS1="$(powerline-go -error $? -shell zsh)"
+    eval "$(powerline-go -error $? -shell zsh -eval -modules-right time)"
 }
 
 function install_powerline_precmd() {
