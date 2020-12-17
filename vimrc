@@ -56,3 +56,9 @@ set backspace=2
 
 " NerdTreeキーバインド
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <silent> jj <ESC>
