@@ -125,11 +125,13 @@ if builtin command -v anyenv >/dev/null; then
 fi
 
 # tmux自動起動
-if [[ ! -n $TMUX ]]; then
-  ID="`tmux list-sessions`"
-  if [[ -z "$(echo $ID | grep -s $CURRENT_TERMINAL)" ]]; then
-    tmux -2u new-session -s $CURRENT_TERMINAL && exit
-  else
-    tmux -2u attach-session -t $CURRENT_TERMINAL && exit
+if builtin command -v tmux >/dev/null; then
+  if [[ ! -n $TMUX ]]; then
+    ID="`tmux list-sessions`"
+    if [[ -z "$(echo $ID | grep -s $CURRENT_TERMINAL)" ]]; then
+      tmux -2u new-session -s $CURRENT_TERMINAL; exit
+    else
+      tmux -2u attach-session -t $CURRENT_TERMINAL; exit
+    fi
   fi
 fi
