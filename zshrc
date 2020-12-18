@@ -39,7 +39,6 @@ if [[ $CURRENT_PLATFORM = "Mac" ]]; then
     zstyle ':prezto:module:prompt' theme 'sorin'
 fi
 
-
 # インストール・アップデート後に実行されるフック
 # この場合は以下のような設定が別途必要
 # ZPLUG_SUDO_PASSWORD="********"
@@ -102,10 +101,8 @@ fi
 # コマンドをリンクして、PATH に追加し、プラグインを読み込む
 zplug load
 
-
 # Powerline-goを設定
 function powerline_precmd() {
-    # PS1="$(powerline-go -error $? -shell zsh)"
     eval "$(powerline-go -error $? -shell zsh -eval -modules-right time)"
 }
 
