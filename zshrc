@@ -131,14 +131,15 @@ fi
   done
 } ~/.zshenv ~/.zprofile ~/.zshrc ~/.zlogin ~/.zlogout
 
-# tmux自動起動
-if builtin command -v tmux >/dev/null; then
-  if [[ ! -n $TMUX ]]; then
-    ID="`tmux list-sessions`"
-    if [[ -z "$(echo $ID | grep -s $CURRENT_TERMINAL)" ]]; then
-      tmux -2u new-session -s $CURRENT_TERMINAL; exit
-    else
-      tmux -2u attach-session -t $CURRENT_TERMINAL; exit
-    fi
-  fi
-fi
+# opam configuration
+test -r /Users/taihei/.opam/opam-init/init.zsh && . /Users/taihei/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+setopt hist_no_store
+setopt hist_expand
+setopt inc_append_history
+
