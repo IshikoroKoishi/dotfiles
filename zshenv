@@ -10,6 +10,8 @@ else
     exit 1
 fi
 
+export PATH="/usr/local/sbin:$PATH"
+
 if [ -z "$TERM_PROGRAM" ]; then
     export CURRENT_TERMINAL='other'
 else
