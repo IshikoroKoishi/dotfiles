@@ -40,9 +40,13 @@ set showmatch
 
 " シンタックスハイライト有効化
 syntax on
+set completeopt=menuone,popup,noinsert
 
 " 自動インデント
 set autoindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " ファイルタイプ毎にプラグインとインデントを自動設定
 filetype plugin indent on
@@ -62,3 +66,5 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap <silent> jj <ESC>
+inoremap <expr><CR> pumvisible() ? "<C-y>" : "<CR>"
+
