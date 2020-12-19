@@ -124,6 +124,13 @@ if builtin command -v anyenv >/dev/null; then
   eval "$(anyenv init -)"
 fi
 
+() {
+  local src
+  for src in $@; do
+    ([[ ! -e $src.zwc ]] || [ ${src:A} -nt $src ]) && zcompile $src
+  done
+} ~/.zshenv ~/.zprofile ~/.zshrc ~/.zlogin ~/.zlogout
+
 # tmux自動起動
 if builtin command -v tmux >/dev/null; then
   if [[ ! -n $TMUX ]]; then
