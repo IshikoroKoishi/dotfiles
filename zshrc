@@ -104,6 +104,10 @@ zplug load
 # Powerline-goを設定
 function powerline_precmd() {
     eval "$(powerline-go -error $? -shell zsh -eval -modules-right time)"
+    
+    if [ ! -z $TMUX ]; then
+        tmux refresh-client -S
+    fi
 }
 
 function install_powerline_precmd() {
@@ -130,9 +134,6 @@ fi
     ([[ ! -e $src.zwc ]] || [ ${src:A} -nt $src ]) && zcompile $src
   done
 } ~/.zshenv ~/.zprofile ~/.zshrc ~/.zlogin ~/.zlogout
-
-# opam configuration
-test -r /Users/taihei/.opam/opam-init/init.zsh && . /Users/taihei/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
