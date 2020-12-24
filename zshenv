@@ -25,5 +25,5 @@ fi
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.anyenv/bin"
 
-export PIPENV_VENV_IN_PROJECT=true
+export PIPENV_VENV_IN_PROJECT=1
 
