@@ -145,5 +145,3 @@ setopt hist_expand
 setopt inc_append_history
 
 alias brew='PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/usr/local/sbin:/sbin brew'
-
-echo ".zshrc loaded"
