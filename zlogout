@@ -1,1 +1,1 @@
-
+echo ".zlogout loaded"

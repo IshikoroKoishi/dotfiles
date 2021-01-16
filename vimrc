@@ -70,4 +70,3 @@ inoremap <expr><CR> pumvisible() ? "<C-y>" : "<CR>"
 
 set listchars=eol:$,tab:>.,trail:_
 set list
-

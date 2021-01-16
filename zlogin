@@ -26,3 +26,4 @@ if [[ `tmux list-windows | wc -l | xargs echo` = "1" ]]; then
     fi
 fi
 
+echo ".zlogin loaded"
