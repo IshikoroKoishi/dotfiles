@@ -27,3 +27,5 @@ export PATH="$PATH:$HOME/.anyenv/bin"
 export PATH="$PATH:$HOME/go/bin"
 
 export PIPENV_VENV_IN_PROJECT=1
+
+echo ".zshenv loaded"
