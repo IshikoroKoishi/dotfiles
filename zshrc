@@ -3,4 +3,3 @@ if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
 fi
 
 eval "$(anyenv init -)"
-ß
